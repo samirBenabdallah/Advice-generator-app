@@ -1,0 +1,92 @@
+:root {
+  --blue-200: #cfe3fa;
+  --green-300: #53ffaa;
+  --blue-600: #4e5d73;
+  --blue-900: #323a49;
+  --blue-950: #1f2632;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-950);
+  width: 100vw;
+  height: 100vh;
+  font-weight: 800;
+}
+.advice-card {
+  background-color: var(--blue-900);
+  max-width: 400px;
+  min-width: 300px;
+  width: 100%;
+  height: max-content;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  .advice-id {
+    color: var(--green-300);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .advice-text {
+    text-align: center;
+    color: var(--blue-200);
+    margin-block: 20px;
+  }
+  .img {
+    margin-bottom: 20px;
+    width: 100%;
+    &.img-mobile {
+      display: none;
+    }
+  }
+  .button {
+    --size: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-48%, 50%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--green-300);
+    .button-img {
+      width: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .advice-card {
+    width: 300px;
+    .img {
+      &.img-mobile {
+        display: block;
+      }
+      &.img-desktop {
+        display: none;
+      }
+    }
+    .button {
+      --size: 40px;
+      .button-img {
+        width: 25px;
+      }
+    }
+  }
+    
+}
